@@ -8,6 +8,36 @@
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
     <style>
+
+         /* Ícone de menu com fundo transparente e linhas pretas */
+         .navbar-toggler-icon {
+            background-color: transparent; /* Fundo transparente */
+            position: relative;
+            display: block;
+            width: 30px;
+            height: 24px;
+        }
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after,
+        .navbar-toggler-icon span {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            background-color: #000; /* Cor preta */
+            border-radius: 4px;
+            left: 0;
+        }
+        .navbar-toggler-icon::before {
+            top: 0; /* Primeira linha */
+        }
+        .navbar-toggler-icon::after {
+            bottom: 0; /* Última linha */
+        }
+        .navbar-toggler-icon span {
+            top: 10px; /* Linha do meio */
+        }
+        
         body {
             font-family: Arial, sans-serif;
             background-image: url('img/banner-10.jpg');
