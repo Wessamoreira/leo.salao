@@ -9,6 +9,16 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <style>
+
+        .banner {
+            background: url('img/banner-10.jpg') center/cover no-repeat;
+            height: 450px; /* Aumenta a altura do banner */
+            min-height: 450px; /* Garante que o banner tenha ao menos 450px de altura */
+            display: flex;
+            align-items: center; /* Centraliza verticalmente o conteúdo */
+            justify-content: center; /* Centraliza horizontalmente o conteúdo */
+        }
+
         .nav .header {
             display: flex;
             justify-content: space-between;
@@ -107,7 +117,7 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <span style="font-family: 'Great Vibes', cursive; color: black; font-size: 2rem;">Leo Cabelereiros</span>
+                <span style="font-family: 'Great Vibes', cursive; color: black; font-size: 2rem;">Leo Cabeleireiros</span>
             </a>
             <!-- Linkando o botão Sair à página index.html -->
             <a href="index.html" class="btn btn-danger" id="logoutBtn">Sair</a>
@@ -141,9 +151,17 @@
         </table>
     </div>
     
-    <footer>
-        <p>&copy; 2025 Léo Cabeleireiros - Todos os direitos reservados</p>
-    </footer>
+    <!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2025 Leo Cabeleireiros - Todos os direitos reservados</p>
+        <div>
+            <a href="https://www.instagram.com/leogyn.cabeleireiros?igsh=dG4zMXFybzNmdWlx&utm_source=qr" target="_blank" class="text-white mx-2">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=100088329725835" target="_blank" class="text-white mx-2">Facebook</a>
+            <a href="https://wa.me/5506234348719" class="text-white mx-2">WhatsApp</a>
+        </div>
+    </div>
+</footer>
     
     <script>
         document.addEventListener("DOMContentLoaded", function() {

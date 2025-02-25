@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serviços - Salão Elegance</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Salão de Beleza</title>
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
 
-        /* titulo do banner*/
-    .banner .container h1 {
-        color: rgb(0, 0, 0); /* Cor do título */
-    }
 
-    .banner .container p {
-        color: rgb(0, 0, 0); /* Cor do subtítulo */
-    }
+   <style>
+
+
+.banner {
+    background: url('img/banner-10.jpg') center/cover no-repeat;
+    height: 450px; /* Aumenta a altura do banner */
+    min-height: 450px; /* Garante que o banner tenha ao menos 450px de altura */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
 
     .navbar .navbar-brand {
         color: rgb(0, 0, 0) !important; /* Substitua 'red' pela cor desejada */
@@ -36,6 +42,19 @@
     body {
         padding-top: 70px;
     }
+
+    body {
+    background-color: #ffffff !important; /* Altere para a cor desejada */
+    }
+    
+    .banner .container h1 {
+    color: rgb(0, 0, 0); /* Cor do título */
+    }
+
+    .banner .container p {
+        color: rgb(0, 0, 0); /* Cor do subtítulo */
+    }
+
 
     /* Imagens do Produto */
     .product-card img {
@@ -64,7 +83,7 @@
 
     /* Seção de Localização */
     .location-section {
-        background-color: #5e5f60; /* Tom suave de rosa pálido */
+        background-color: #000000af; /* Tom suave de rosa pálido */
         color: #fff;
         padding: 60px 0;
         text-align: center;
@@ -73,7 +92,7 @@
 
     /* Títulos e textos da seção de localização */
     .location-section p, .location-section h2 {
-        color: #fff;
+        color: #000000;
     }
 
     /* Cartão do Produto (Título e Texto) */
@@ -207,11 +226,11 @@
 
     /* Rodapé */
     footer {
-        background-color: #524f50; /* Rosa suave */
+        background-color: #000000; /* Rosa suave */
         color: white;
     }
 
-    /* Estilo para os botões de navegação */
+    /* Estilo para os botões de navegação bem aqui */ 
 .navbar .nav-link {
     color: rgb(0, 0, 0); /* Cor do texto inicial */
     font-weight: bolder;
@@ -220,6 +239,44 @@
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s; /* Transição suave para o efeito de hover */
 }
+
+/* para baixo stilização do mapa com coordenada*/
+
+.location-section {
+        background: url('img/banner-10.jpg') center/cover no-repeat; /* Adiciona a imagem de fundo */
+        color: #040404;
+        padding: 60px 0;
+        text-align: center;
+        position: relative;
+    }
+
+    .map-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .map-container {
+        width: 400px;
+        height: 700px;
+        background: url('iphone-frame.png') no-repeat center;
+        background-size: contain;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        margin: auto; /* Centraliza a div do mapa */
+    }
+    iframe {
+        width: 83%;
+        height: 72%;
+        border: 0;
+        position: absolute;
+        top: 14%;
+        left: 8.5%;
+        border-radius: 15px;
+    }
 
 /* Cores dos botões */
 .navbar .nav-link.inicio {
@@ -245,17 +302,19 @@
     transform: translateY(-3px); /* Leve efeito de elevação */
 }
 
+    
 
     
 
-    </style>
+   </style>
+
 </head>
 <body>
 
-     <!-- Navbar fixa com logo -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navbar fixa com logo -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#"> Leo Cabelereiros</a>
+            <a class="navbar-brand" href="#"> Leo Cabeleireiros</a>
             <button class="navbar-toggler" type="button" id="menu-btn">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -266,7 +325,9 @@
                     <li class="nav-item"><a class="nav-link" href="produto.html">Produtos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Agendamento</a></li>
                     <li class="nav-item dropdown">
-                        
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            Entrar
+                        </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="login.html">Administrador</a></li>
                             <li><a class="dropdown-item" href="login_funcionario.html">Funcionário</a></li>
@@ -280,19 +341,20 @@
     <!-- Banner com imagem -->
     <header class="banner" style="background: url('img/banner-10.jpg') center/cover no-repeat;">
         <div class="container text-center text-white">
-            <h1 class="animate_animated animate_fadeInDown">Leo Cabelereiros</h1>
+            <h1 class="animate_animated animate_fadeInDown">Leo Cabeleireiros</h1>
             <p class="animate_animated animate_fadeInUp">Os melhores serviços para você brilhar!</p>
         </div>
     </header>
-
+    
+    <!-- Seção de Serviços -->
     <section class="container my-5">
         <h2 class="text-center">Nossos Serviços</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
-                    <img src="img/cortemasculino.jpg" class="card-img-top" alt="Corte Masculino">
+                    <img src="img/WhatsApp-Image-2022-02-24-at-11.46.27-AM.jpeg" class="card-img-top" alt="Corte de Cabelo">
                     <div class="card-body">
-                        <h5 class="card-title">Corte Masculino</h5>
+                        <h5 class="card-title">Corte de Cabelo</h5>
                         <p class="card-text">Cortes modernos e personalizados.</p>
                         <a href="contact.html" class="btn btn-dark">Agendar</a>
                     </div>
@@ -300,17 +362,17 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="img/WhatsApp-Image-2022-02-24-at-11.46.27-AM.jpeg" class="card-img-top" alt="Corte Feminino">
+                    <img src="img/manicure.jpg" class="card-img-top" alt="Manicure">
                     <div class="card-body">
-                        <h5 class="card-title">Corte Feminino</h5>
-                        <p class="card-text">Estilos que combinam com você.</p>
+                        <h5 class="card-title">Manicure</h5>
+                        <p class="card-text">Deixe suas unhas impecáveis.</p>
                         <a href="contact.html" class="btn btn-dark">Agendar</a>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="img/4465.jpg" class="card-img-top" alt="Escova">
+                    <img src="img/post_thumbnail-e50c633a5505a3b88443139dbbd2ac71-2048x1365.jpeg" class="card-img-top" alt="Massagem">
                     <div class="card-body">
                         <h5 class="card-title">Escova</h5>
                         <p class="card-text">Deixe seus cabelos impecáveis.</p>
@@ -318,127 +380,89 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/manicure.jpg" class="card-img-top" alt="Manicure e Pedicure">
-                    <div class="card-body">
-                        <h5 class="card-title">Manicure e Pedicure</h5>
-                        <p class="card-text">Unhas e pés impecáveis.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
+        </div>
+    </section>
+
+    <!-- Seção de Produtos -->
+    <section class="product-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Produtos Exclusivos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="img/loreal-professionnel-absolut-repair-kit-shampoo-mascara-500g.webp" class="card-img-top" alt="Produto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Shampoo Revitalizante</h5>
+                            <p class="card-text">Para cabelos fortes e saudáveis.</p>
+                            <a href="produto.html" class="btn btn-dark">Comprar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/Blog-Alongamento-unhas.png" class="card-img-top" alt="Alongamento de Unhas">
-                    <div class="card-body">
-                        <h5 class="card-title">Alongamento de Unhas</h5>
-                        <p class="card-text">Unhas lindas e duráveis.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="img/ma_scara_de_tratamento_l_ore_al_professionnel_serie_expert_inforcer_500g.webp" class="card-img-top" alt="Produto 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Creme de Tratamento</h5>
+                            <p class="card-text">Hidratação profunda para a pele.</p>
+                            <a href="produto.html" class="btn btn-dark">Comprar</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/spa-pes-maos.jpg" class="card-img-top" alt="Spa para Pés e Mãos">
-                    <div class="card-body">
-                        <h5 class="card-title">Spa para Pés e Mãos</h5>
-                        <p class="card-text">Relaxe e cuide de suas mãos e pés.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/tipos-de-alisamento-de-cabelo-quais-sao-os-mais-conhecidos-new-hair-1.jpg" class="card-img-top" alt="Alisamento">
-                    <div class="card-body">
-                        <h5 class="card-title">Alisamento</h5>
-                        <p class="card-text">Cabelos lisos e brilhantes o dia todo.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/luzes-no-cabelo-loira-salao-cabeleireiro-moema-sao-paulo-01.webp" class="card-img-top" alt="Tintura, Luzes e Mechas">
-                    <div class="card-body">
-                        <h5 class="card-title">Tintura, Luzes e Mechas</h5>
-                        <p class="card-text">Transforme seu visual com as cores que você ama.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/AdobeStock_78375278.jpeg.jpeg" class="card-img-top" alt="Escova Progressiva">
-                    <div class="card-body">
-                        <h5 class="card-title">Escova Progressiva</h5>
-                        <p class="card-text">Cabelos lisos e com brilho por mais tempo.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/cabelo-bonito-no-processo-de-tratamento-de-queratina-1.jpg" class="card-img-top" alt="Hidratação e Reconstrução Capilar">
-                    <div class="card-body">
-                        <h5 class="card-title">Hidratação e Reconstrução Capilar</h5>
-                        <p class="card-text">Cabelos saudáveis e revitalizados.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/limpeza-de-pele-811x526.png" class="card-img-top" alt="Limpeza de Pele">
-                    <div class="card-body">
-                        <h5 class="card-title">Limpeza de Pele</h5>
-                        <p class="card-text">Pele limpa e rejuvenescida.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/37-2.png" class="card-img-top" alt="Depilação">
-                    <div class="card-body">
-                        <h5 class="card-title">Depilação</h5>
-                        <p class="card-text">Pele suave e livre de pelos.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/x-dicas-para-uma-maquiagem-profissional-de-sucesso-20210208170733.jpg.jpg" class="card-img-top" alt="Maquiagem">
-                    <div class="card-body">
-                        <h5 class="card-title">Maquiagem</h5>
-                        <p class="card-text">Maquiagem profissional para qualquer ocasião.</p>
-                        <a href="contact.html" class="btn btn-dark">Agendar</a>
+                <div class="col-md-4">
+                    <div class="card product-card">
+                        <img src="img/absolut_repair_oil.webp" class="card-img-top" alt="Produto 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Óleo Capilar</h5>
+                            <p class="card-text">Tratamento intensivo para fios danificados.</p>
+                            <a href="produto.html" class="btn btn-dark">Comprar</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Botões Flutuantes -->
+    
+
+    <!-- Seção de Localização -->
+    <section class="location-section">
+        <div class="container">
+            <h1>Nosso Endereço</h1>
+            <p>R. 127, 35 - Qd.F-28 - St. Sul, Goiânia - GO, 74093-090</p>
+            <div class="map-wrapper">
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3675.292964244753!2d-49.25918642566965!3d-16.68509578406165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef12fc5a5b2c9%3A0x876f8e72d8f64b5f!2sR.%20127%2C%2035%20-%20St.%20Sul%2C%20Goi%C3%A2nia%20-%20GO%2C%2074093-090!5e0!3m2!1spt-BR!2sbr!4v1708715432100" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    
+     <!-- Rodapé -->
+<footer class="bg-dark text-white text-center py-3">
+    <div class="container">
+        <p>&copy; 2025 Leo Cabeleireiros - Todos os direitos reservados</p>
+        <div>
+            <a href="https://www.instagram.com/leogyn.cabeleireiros?igsh=dG4zMXFybzNmdWlx&utm_source=qr" target="_blank" class="text-white mx-2">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=100088329725835" target="_blank" class="text-white mx-2">Facebook</a>
+            <a href="https://wa.me/5506234348719" class="text-white mx-2">WhatsApp</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Botões Flutuantes -->
     <div class="floating-buttons">
         <a href="https://wa.me/5506234348719" target="_blank" class="floating-btn whatsapp">
             <i class="fab fa-whatsapp"></i>
         </a>
-        <a href="https://www.instagram.com/seuinstagram" target="_blank" class="floating-btn instagram">
+        <a href="https://www.instagram.com/leogyn.cabeleireiros/?igsh=dG4zMXFybzNmdWlx&utm_source=qr#" target="_blank" class="floating-btn instagram">
             <i class="fab fa-instagram"></i>
         </a>
     </div>
 
-    <!-- Rodapé -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2025 Leo Cabelereiros - Todos os direitos reservados</p>
-    </footer>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>

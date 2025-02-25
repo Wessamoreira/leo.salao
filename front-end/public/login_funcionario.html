@@ -66,13 +66,13 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark w-100 position-fixed top-0">
         <div class="container d-flex justify-content-center">
-            <a class="navbar-brand text-center w-100" href="admin.html">Leo Cabelereiros</a>
+            <a class="navbar-brand text-center w-100" href="index.html">Leo Cabeleireiros</a>
         </div>
     </nav>
 
     <!-- Formulário de Cadastro -->
     <div class="login-container">
-        <h2>Cadastrar E-mail</h2>
+        <h2>Login</h2>
         <form id="loginForm">
             <div class="mb-3">
                 <input type="email" class="form-control" id="email" placeholder="E-mail" required>
@@ -80,45 +80,39 @@
             <div class="mb-3">
                 <input type="password" class="form-control" id="senha" placeholder="Senha" required>
             </div>
-            <button type="submit" class="btn btn-dark w-100">Salvar</button>
+            <button type="submit" class="btn btn-dark w-100">Entrar</button>
         </form>
     </div>
 
-    <!-- Rodapé corrigido -->
-    <footer>
-        <p>&copy; 2025 Leo Cabelereiros - Todos os direitos reservados</p>
-    </footer>
+   
 
     <script src="js/jquery.min.js"></script>
-<script>
-    // Carregando os funcionários salvos no localStorage
-    let funcionarios = JSON.parse(localStorage.getItem('funcionarios')) || [];
+    <script>
+        // Função para autenticar o login do funcionário
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            // Pegando os valores do formulário
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+    
+            // Recuperando os funcionários cadastrados do localStorage
+            const funcionarios = JSON.parse(localStorage.getItem('funcionarios')) || [];
+    
+            // Verificando se o funcionário existe no array de funcionários cadastrados
+            const funcionario = funcionarios.find(f => f.email === email && f.senha === senha);
+    
+            if (funcionario) {
+                // Se o login for bem-sucedido, redirecionar para a página de horários
+                window.location.href = 'horarios.html';
+            } else {
+                alert('E-mail ou senha incorretos!');
+            }
+        });
+    </script>
 
-    document.getElementById('cadastroForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        // Pegando os valores do formulário
-        const email = document.getElementById('email').value;
-        const senha = document.getElementById('senha').value;
-
-        // Verificando se o e-mail já existe
-        const funcionarioExistente = funcionarios.find(funcionario => funcionario.email === email);
-        if (funcionarioExistente) {
-            alert('Funcionário com esse e-mail já cadastrado.');
-            return;
-        }
-
-        // Adicionando o funcionário ao array
-        funcionarios.push({ email, senha });
-
-        // Salvar o array de funcionários no localStorage para persistir entre recarregamentos
-        localStorage.setItem('funcionarios', JSON.stringify(funcionarios));
-
-        alert('Funcionário cadastrado com sucesso!');
-        window.location.href = 'admin.html'; // Redirecionando para a página de login
-    });
-</script>
 </body>
 </html>
+
 
 
