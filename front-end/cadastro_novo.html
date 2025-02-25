@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Funcionário</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background: url('img/banner-10.jpg') center/cover no-repeat fixed;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: #ffffff !important;
+        }
+
+        .navbar-brand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2rem;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        /* Rodapé fixo no final */
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark w-100 position-fixed top-0">
+        <div class="container d-flex justify-content-center">
+            <a class="navbar-brand text-center w-100" href="admin.html">Leo Cabelereiros</a>
+        </div>
+    </nav>
+
+    <!-- Formulário de Cadastro -->
+    <div class="login-container">
+        <h2>Cadastrar E-mail</h2>
+        <form id="loginForm">
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="senha" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Salvar</button>
+        </form>
+    </div>
+
+    <!-- Rodapé corrigido -->
+    <footer>
+        <p>&copy; 2025 Leo Cabelereiros - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+<script>
+    // Carregando os funcionários salvos no localStorage
+    let funcionarios = JSON.parse(localStorage.getItem('funcionarios')) || [];
+
+    document.getElementById('cadastroForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Pegando os valores do formulário
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+
+        // Verificando se o e-mail já existe
+        const funcionarioExistente = funcionarios.find(funcionario => funcionario.email === email);
+        if (funcionarioExistente) {
+            alert('Funcionário com esse e-mail já cadastrado.');
+            return;
+        }
+
+        // Adicionando o funcionário ao array
+        funcionarios.push({ email, senha });
+
+        // Salvar o array de funcionários no localStorage para persistir entre recarregamentos
+        localStorage.setItem('funcionarios', JSON.stringify(funcionarios));
+
+        alert('Funcionário cadastrado com sucesso!');
+        window.location.href = 'admin.html'; // Redirecionando para a página de login
+    });
+</script>
+</body>
+</html>
+
+

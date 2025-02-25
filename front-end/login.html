@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 350px;
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .navbar {
+            background-color: #343a40;
+            padding: 10px;
+        }
+        .navbar-brand {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .navbar-brand:hover {
+            color: #ccc;
+        }
+
+        body {
+        background: url('img/banner-10.jpg') center/cover no-repeat fixed;
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .navbar-brand {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2rem;
+        font-weight: bold;
+        color: rgb(0, 0, 0);
+        text-decoration: none; /* Remover sublinhado */
+    }
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background-color: #ffffff !important; /* Rosa suave com !important para garantir que seja a última regra */
+    }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark w-100 position-fixed top-0">
+        <div class="container d-flex justify-content-center">
+            <a class="navbar-brand text-center w-100" href="index.html">Leo Cabelereiros</a>
+        </div>
+    </nav>
+    
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="mb-3">
+                <input type="email" class="form-control" id="email" placeholder="E-mail" required>
+            </div>
+            <div class="mb-3">
+                <input type="password" class="form-control" id="senha" placeholder="Senha" required>
+            </div>
+            <button type="submit" class="btn btn-dark w-100">Entrar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            if (email === "wessleysanttos@icloud.com" && senha === "56059931") {
+                window.location.href = 'admin.html';
+            } else {
+                alert("E-mail ou senha incorretos!");
+            }
+        });
+    </script>
+</body>
+</html>

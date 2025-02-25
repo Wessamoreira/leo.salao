@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar/Editar Produto - Salão Elegance</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        .form-container {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin: auto;
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+        }
+        .form-container .btn-primary {
+            background-color: #343a40;
+            border-color: #343a40;
+        }
+        .form-container .btn-primary:hover {
+            background-color: #495057;
+            border-color: #495057;
+        }
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            background-color: #25d366; /* Verde do WhatsApp */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-btn.instagram {
+            background-color: #E4405F; /* Cor do Instagram */
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .navbar .navbar-brand {
+        color: rgb(0, 0, 0) !important; /* Substitua 'red' pela cor desejada */
+    }
+
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background-color: #ffffff !important; /* Rosa suave com !important para garantir que seja a última regra */
+    }
+
+    /* Ajuste para o conteúdo não ficar escondido atrás do navbar */
+    body {
+        padding-top: 70px;
+    }
+
+    body {
+    background-color: #ffffff !important; /* Altere para a cor desejada */
+    }
+    
+    .banner .container h1 {
+    color: rgb(0, 0, 0); /* Cor do título */
+    }
+
+    .banner .container p {
+        color: rgb(0, 0, 0); /* Cor do subtítulo */
+    }
+
+     /* Menu Suspenso de Login */
+     .dropdown-menu {
+        min-width: 200px;
+    }
+
+    .dropdown-item {
+        cursor: pointer;
+    }
+
+    /* Navegação Fixada no Topo */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        background-color: #7c656d; /* Rosa suave */
+    }
+
+    /* Ajuste para o conteúdo não ficar escondido atrás do navbar */
+    body {
+        padding-top: 70px;
+    }
+
+    /* Estilo da Fonte do Banner */
+    .banner h1 {
+        font-family: 'Dancing Script', cursive;
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    /* Marca da Navegação */
+    .navbar-brand {
+        font-family: 'Great Vibes', cursive;
+        font-size: 2rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none; /* Remover sublinhado */
+    }
+
+    /* Seção de Serviços */
+    .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #d4d6da;
+        margin-bottom: 40px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .card img {
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Estilo dos Botões */
+    .btn-dark {
+        background-color: #343a40;
+        border: none;
+        color: #f3f6fd;
+        font-weight: bold;
+        transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    .btn-dark:hover {
+        background-color: #343a40;
+        color: white;
+    }
+
+    /* Rodapé */
+    footer {
+        background-color: #000000; /* Rosa suave */
+        color: white;
+    }
+
+    /* Estilo para os botões de navegação bem aqui */ 
+.navbar .nav-link {
+    color: rgb(0, 0, 0); /* Cor do texto inicial */
+    font-weight: bolder;
+    text-transform: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para o efeito de hover */
+}
+.navbar .nav-link.inicio {
+    background-color: #f7a1d7; /* Cor de fundo para "Início" */
+}
+
+.navbar .nav-link.produtos {
+    background-color: #ff6a88; /* Cor de fundo para "Produtos" */
+}
+
+.navbar .nav-link.servicos {
+    background-color: #ff9a8b; /* Cor de fundo para "Serviços" */
+}
+
+.navbar .nav-link.agendamento {
+    background-color: #ff5e62; /* Cor de fundo para "Agendamento" */
+}
+
+/* Efeito de Hover nos botões */
+.navbar .nav-link:hover {
+    background-color: #fff; /* Cor de fundo ao passar o mouse */
+    color: #ff5e62; /* Cor do texto ao passar o mouse */
+    transform: translateY(-3px); /* Leve efeito de elevação */
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="fa-solid fa-scissors"></i> Leo Cabelereiros</a>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="admin.html">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Banner com imagem -->
+     <header class="banner" style="background: url('img/banner-10.jpg') center/cover no-repeat;">
+        <div class="container text-center text-white">
+            <h1 class="animate_animated animate_fadeInDown">Leo Cabelereiros</h1>
+            <p class="animate_animated animate_fadeInUp">Os melhores serviços para você brilhar!</p>
+        </div>
+    </header>
+
+    <!-- Formulário de Adicionar/Editar Produto -->
+    <div class="form-container">
+        <h2>Adicionar/Editar Produto</h2>
+        <form id="productForm">
+            <div class="mb-3">
+                <label for="productName" class="form-label">Nome do Produto</label>
+                <input type="text" class="form-control" id="productName" required>
+            </div>
+            <div class="mb-3">
+                <label for="productDescription" class="form-label">Descrição</label>
+                <textarea class="form-control" id="productDescription" rows="4" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="productPrice" class="form-label">Preço</label>
+                <input type="number" class="form-control" id="productPrice" step="0.01" required>
+            </div>
+            <div class="mb-3">
+                <label for="productStock" class="form-label">Estoque</label>
+                <input type="number" class="form-control" id="productStock" required>
+            </div>
+            <div class="mb-3">
+                <label for="productImage" class="form-label">Imagem do Produto</label>
+                <input type="file" class="form-control" id="productImage" accept="image/*" required>
+                <small class="form-text text-muted">Aceita formatos: .jpg, .jpeg, .png, .gif, .webp</small>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Salvar Produto</button>
+        </form>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Leo Cabelereiros - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

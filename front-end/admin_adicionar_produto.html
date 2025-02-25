@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        /* Estilo do Cabeçalho */
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px; /* Ajuste do tamanho do logo */
+        }
+
+        /* Título */
+        header h1 {
+            flex: 1;
+            text-align: center;
+            font-size: 24px;
+            margin: 0;
+            color: white;
+        }
+
+        /* Botão Voltar */
+        header .back-button {
+            text-align: right;
+        }
+
+        header .back-button a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: inline-block;
+            background-color: #007bff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        header .back-button a:hover {
+            background-color: #0056b3;
+        }
+
+        /* Formulário */
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .form-container label {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container button {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-container input[type="file"] {
+            padding: 3px;
+        }
+
+        .floating-btn {
+            width: 50px;
+            height: 50px;
+            background-color: #25d366; /* Verde do WhatsApp */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            text-decoration: none;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .floating-btn.instagram {
+            background-color: #E4405F; /* Cor do Instagram */
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+    }
+
+     /* Estilo para os botões de navegação */
+.navbar .nav-link {
+    color: white; /* Cor do texto inicial */
+    font-weight: bolder;
+    text-transform: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Transição suave para o efeito de hover */
+}
+
+/* Cores dos botões */
+.navbar .nav-link.inicio {
+    background-color: #f7a1d7; /* Cor de fundo para "Início" */
+}
+
+.navbar .nav-link.produtos {
+    background-color: #ff6a88; /* Cor de fundo para "Produtos" */
+}
+
+.navbar .nav-link.servicos {
+    background-color: #ff9a8b; /* Cor de fundo para "Serviços" */
+}
+
+.navbar .nav-link.agendamento {
+    background-color: #ff5e62; /* Cor de fundo para "Agendamento" */
+}
+
+/* Efeito de Hover nos botões */
+.navbar .nav-link:hover {
+    background-color: #fff; /* Cor de fundo ao passar o mouse */
+    color: #ff5e62; /* Cor do texto ao passar o mouse */
+    transform: translateY(-3px); /* Leve efeito de elevação */
+}
+
+    
+    
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo Salão">
+        </div>
+        <h1>Adicionar Produto</h1>
+        <div class="back-button">
+            <a href="admin.html">Voltar</a>
+        </div>
+    </header>
+
+    <!-- Formulário para Adicionar Produto -->
+    <div class="form-container">
+        <h2>Adicionar Novo Produto</h2>
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <label for="nome">Nome do Produto</label>
+            <input type="text" id="nome" name="nome" placeholder="Digite o nome do produto" required>
+
+            <label for="descricao">Descrição</label>
+            <input type="text" id="descricao" name="descricao" placeholder="Digite a descrição do produto" required>
+
+            <label for="preco">Preço</label>
+            <input type="number" id="preco" name="preco" placeholder="Digite o preço do produto" required>
+
+            <label for="estoque">Quantidade em Estoque</label>
+            <input type="number" id="estoque" name="estoque" placeholder="Digite a quantidade disponível" required>
+
+            <label for="imagem">Imagem do Produto</label>
+            <input type="file" id="imagem" name="imagem" required>
+
+            <button type="submit">Adicionar Produto</button>
+        </form>
+    </div>
+
+     <!-- Rodapé -->
+     <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Leo Cabelereiros - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

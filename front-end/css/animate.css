@@ -1,0 +1,57 @@
+/* animation.css */
+
+/* Animação para virar os blocos */
+@keyframes flipIn {
+    0% {
+      transform: rotateY(90deg);
+      opacity: 0;
+    }
+    50% {
+      transform: rotateY(-10deg);
+      opacity: 0.5;
+    }
+    100% {
+      transform: rotateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .card {
+    perspective: 1000px;
+    transition: transform 0.6s ease;
+  }
+  
+  /* Aplica a animação aos blocos */
+  .animate-flip {
+    animation: flipIn 1s ease-in-out forwards;
+  }
+  
+  /* Animação para o banner */
+  @keyframes fadeInBanner {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .banner {
+    animation: fadeInBanner 2s ease-in-out;
+  }
+  
+  /* Animação de entrada suave nos títulos */
+  @keyframes fadeInText {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  h1, h2, p {
+    animation: fadeInText 1.5s ease-out;
+  }
