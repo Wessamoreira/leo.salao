@@ -24,6 +24,23 @@
 
    <style>
 
+    /* Garantindo que a cor seja aplicada no botão específico */
+.product-card .btn-dark {
+    background-color: #ff6a88; /* Cor de fundo */
+    border-color: #ff6a88; /* Cor da borda */
+    color: white; /* Cor do texto */
+}
+
+/* Efeito hover para mudar a cor quando passar o mouse */
+.product-card .btn-dark:hover {
+    background-color: #ff9a8b; /* Cor de fundo ao passar o mouse */
+    border-color: #ff9a8b; /* Cor da borda ao passar o mouse */
+}
+
+
+
+
+
 .navbar-toggler {
     display: block; /* Garante que o botão esteja visível */
 }
@@ -143,12 +160,17 @@
 
     /* Botões no Cartão do Produto */
     .product-card .btn-dark {
-        background-color: #343a40;
-        border-color: #343a40;
+        background-color: #f37a9a;
+        border-color: #f37a9a;
     }
 
     .product-card .btn-dark:hover {
-        background-color: #495057;
+        background-color: #f37a9a;
+        border-color: #f37a9a;
+    }
+
+    .product-card .btn-dark:hover {
+        background-color: #f24976;
         border-color: #495057;
     }
 
@@ -253,7 +275,7 @@
 
     /* Estilo dos Botões */
     .btn-dark {
-        background-color: #343a40;
+        background-color: #f37a9a;
         border: none;
         color: #f3f6fd;
         font-weight: bold;
@@ -261,7 +283,7 @@
     }
 
     .btn-dark:hover {
-        background-color: #343a40;
+        background-color: #ff4375;
         color: white;
     }
 

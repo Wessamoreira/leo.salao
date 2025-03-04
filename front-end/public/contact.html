@@ -4,13 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salão de Beleza</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 
     <style>
+.section-title {
+    color: #000000 !important; /* Cor intensa para garantir que substitua qualquer valor anterior */
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+        /* Cor do título "Agende seu Horário" */
+.section-title {
+    color: #ff5e62; /* Tom suave de rosa para o título */
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Estilos do botão Agendar */
+.btn-agendar {
+    background-color: #ff5e62; /* Cor de fundo inicial (rosa suave) */
+    color: white; /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    padding: 15px 25px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    width: 100%; /* Ocupa toda a largura disponível */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Cursor de mão */
+}
+
+/* Efeito de hover (quando o mouse passa sobre o botão) */
+.btn-agendar:hover {
+    background-color: #ff3b40; /* Cor mais intensa ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+/* Efeito de foco (quando o botão está em foco) */
+.btn-agendar:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 10px rgba(255, 94, 98, 0.8); /* Efeito de brilho */
+}
+
 
          /* Ícone de menu com fundo transparente e linhas pretas */
          .navbar-toggler-icon {
@@ -115,7 +158,7 @@
 
     /* Cartão do Produto (Título e Texto) */
     .product-card .card-title, .product-card .card-text {
-        color: #333;
+        color: #000000;
     }
 
     /* Botões no Cartão do Produto */
@@ -230,15 +273,15 @@
 
     /* Estilo dos Botões */
     .btn-dark {
-        background-color: #343a40;
+        background-color: #f37a9a;
         border: none;
-        color: #f3f6fd;
+        color: #ffffff;
         font-weight: bold;
         transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
     }
 
     .btn-dark:hover {
-        background-color: #343a40;
+        background-color: #f93d6f;
         color: white;
     }
 
@@ -297,6 +340,35 @@
         }
 
 
+
+
+
+        /* Estilos do botão Agendar */
+.btn-agendar {
+    background-color: #ff5e62; /* Cor de fundo inicial (rosa suave) */
+    color: white; /* Cor do texto */
+    font-size: 1.2rem; /* Tamanho do texto */
+    font-weight: bold; /* Texto em negrito */
+    padding: 15px 25px; /* Espaçamento interno */
+    border: none; /* Sem borda */
+    border-radius: 30px; /* Bordas arredondadas */
+    width: 100%; /* Ocupa toda a largura disponível */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transição suave */
+    cursor: pointer; /* Cursor de mão */
+}
+
+/* Efeito de hover (quando o mouse passa sobre o botão) */
+.btn-agendar:hover {
+    background-color: #ff3b40; /* Cor mais intensa ao passar o mouse */
+    transform: scale(1.05); /* Leve aumento de tamanho */
+}
+
+/* Efeito de foco (quando o botão está em foco) */
+.btn-agendar:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 10px rgba(255, 94, 98, 0.8); /* Efeito de brilho */
+}
+
     </style>
 </head>
 <body>
@@ -336,107 +408,63 @@
         </div>
     </header>
 
-    <!-- Seção de Agendamento -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">Agende Nosso Serviço</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <form id="agendamentoForm">
-                    <div class="mb-3">
-                        <label for="nomeCliente" class="form-label">Nome do Cliente</label>
-                        <input type="text" class="form-control" id="nomeCliente" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefoneCliente" class="form-label">Telefone</label>
-                        <input type="tel" class="form-control" id="telefoneCliente" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="horario" class="form-label">Escolha o Horário</label>
-                        <select class="form-select" id="horario" required>
-                            <option value="">Selecione</option>
-                            <option value="10:00">10:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="14:00">14:00</option>
-                            <option value="16:00">16:00</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="funcionario" class="form-label">Escolha o Funcionário</label>
-                        <select class="form-select" id="funcionario" required>
-                            <option value="">Selecione</option>
-                            <option value="Leo">Leo</option>
-                            <option value="Lurdinha">Lurdinha</option>
-                            <option value="Hortência">Hortência</option>
-                        </select>
-                    </div>
-                    <div class="mb-3">
-                        <label for="dia" class="form-label">Escolha o Dia</label>
-                        <select class="form-select" id="dia" required>
-                            <option value="">Selecione</option>
-                            <!-- Dias do mês -->
-                            <script>
-                                for (let i = 1; i <= 31; i++) {
-                                    document.write(`<option value="${i}">${i}</option>`);
-                                }
-                            </script>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-3">
-                        <label for="mes" class="form-label">Escolha o Mês</label>
-                        <select class="form-select" id="mes" required>
-                            <option value="">Selecione</option>
-                            <option value="1">Janeiro</option>
-                            <option value="2">Fevereiro</option>
-                            <option value="3">Março</option>
-                            <option value="4">Abril</option>
-                            <option value="5">Maio</option>
-                            <option value="6">Junho</option>
-                            <option value="7">Julho</option>
-                            <option value="8">Agosto</option>
-                            <option value="9">Setembro</option>
-                            <option value="10">Outubro</option>
-                            <option value="11">Novembro</option>
-                            <option value="12">Dezembro</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-dark">Agendar</button>
-                    <button type="button" class="btn btn-success" id="whatsappBtn">Agendar no WhatsApp</button>
-                </form>
-            </div>
-            <div class="col-md-6">
-                <h3 class="text-center">Nossos Serviços</h3>
-                
-                <!-- Seletor de serviço -->
-                <div class="service-dropdown">
-                    <label for="servicoSelect" class="form-label">Escolha o Serviço</label>
-                    <select class="form-select" id="servicoSelect" onchange="mostrarProcedimento(this.value)">
-                        <option value="">Selecione</option>
-                        <option value="Corte Masculino">Corte Masculino</option>
-                        <option value="Corte Feminino">Corte Feminino</option>
-                        <option value="Manicure e Pedicure">Manicure e Pedicure</option>
-                        <option value="Alongamento de Unhas">Alongamento de Unhas</option>
-                        <option value="Escova">Escova</option>
-                        <option value="Alisamento">Alisamento</option>
-                        <option value="Tintura, Luzes e Mechas">Tintura, Luzes e Mechas</option>
-                        <option value="Escova Progressiva">Escova Progressiva</option>
-                        <option value="Hidratação e Reconstrução Capilar">Hidratação e Reconstrução Capilar</option>
-                        <option value="Spa para Pés e Mãos">Spa para Pés e Mãos</option>
-                        <option value="Limpeza de Pele">Limpeza de Pele</option>
-                        <option value="Depilação">Depilação</option>
-                        <option value="Maquiagem">Maquiagem</option>
-                    </select>
-                </div>
-
-                <!-- Exibição do procedimento selecionado -->
-                <div class="service-selected" id="serviceSelected">
-                    Nenhum procedimento selecionado
-                </div>
-            </div>
+   <!-- Seção de Agendamento -->
+<section class="container my-5">
+    <h2 class="section-title">Agende Seu Horário</h2>
+    <form id="agendamentoForm">
+        <div class="mb-3">
+            <label for="nomeCliente" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nomeCliente" required>
         </div>
-    </section>
+        <div class="mb-3">
+            <label for="funcionario" class="form-label">Profissional</label>
+            <select class="form-select" id="funcionario" required>
+                <option value="">Selecione</option>
+                <option value="Leo">Leo</option>
+                <option value="Lurdinha">Lurdinha</option>
+                <option value="Hortência">Hortência</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="data" class="form-label">Data</label>
+            <input type="date" class="form-control" id="data" required>
+        </div>
+        <div class="mb-3">
+            <label for="horario" class="form-label">Horário</label>
+            <input type="time" class="form-control" id="horario" required>
+        </div>
+        <div class="mb-3">
+            <label for="servico" class="form-label">Serviço</label>
+            <select class="form-select" id="servico" required>
+                <option value="">Selecione</option>
+                <option value="Corte Masculino">Corte Masculino</option>
+                <option value="Corte Feminino">Corte Feminino</option>
+                <option value="Manicure e Pedicure">Manicure e Pedicure</option>
+                <option value="Escova">Escova</option>
+                <option value="Depilção a laser">Depilação a laser</option>
+                <option value="Mechas">Mechas</option>
+                <option value="Retoque raizes">Retoque raizes</option>
+                <option value="massagem">massagem</option>
+                <option value="maquiagem">maquiagem</option>
+                <option value="Escova">Escova</option>
+                <option value="Hidratacão">Hidratação</option>
+                <option value="Alisamento">Alisamento</option>
+                <option value="Recontrucão capilar">Reconstrucão</option>
+                <option value="Reflexo inverso">Reflexo inverso</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-dark w-100">Agendar</button>
+    </form>
+</section>
+
 
    
+<!-- WhatsApp Button -->
+<a href="#" id="whatsappBtn" class="floating-btn">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+
 
      <!-- Rodapé -->
 <footer class="bg-dark text-white text-center py-3">
@@ -450,49 +478,42 @@
     </div>
 </footer>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Função para mostrar o procedimento selecionado
-        function mostrarProcedimento(procedimento) {
-            document.getElementById('serviceSelected').textContent = `Procedimento Selecionado: ${procedimento}`;
-        }
 
-        // Função para agendar pelo WhatsApp
-        document.getElementById('whatsappBtn').addEventListener('click', function () {
+<script>
+    document.getElementById('agendamentoForm').addEventListener('submit', function (e) {
+        e.preventDefault(); // Impede o envio padrão do formulário
+
         var nome = document.getElementById('nomeCliente').value;
-        var telefone = document.getElementById('telefoneCliente').value;
-        var horario = document.getElementById('horario').value;
         var funcionario = document.getElementById('funcionario').value;
-        var procedimento = document.getElementById('serviceSelected').textContent.replace("Procedimento Selecionado: ", "");
-        var dia = document.getElementById('dia').value;
-        var mes = document.getElementById('mes').options[document.getElementById('mes').selectedIndex].text; // Nome do mês
+        var data = document.getElementById('data').value;
+        var horario = document.getElementById('horario').value;
+        var servico = document.getElementById('servico').value;
 
-        if (!nome || !telefone || !horario || !funcionario || !procedimento || !dia || !mes) {
-            alert("Por favor, preencha todos os campos antes de continuar.");
+        if (!nome || !funcionario || !data || !horario || !servico) {
+            alert("Por favor, preencha todos os campos.");
             return;
         }
 
-        var mensagem = `Olá, gostaria de agendar um horário!\n\n` +
-                    `👤 Nome: ${nome}\n` +
-                    `📞 Telefone: ${telefone}\n` +
-                    `📅 Data: ${dia} de ${mes}\n` +
-                    `🕒 Horário: ${horario}\n` +
-                    `💆 Procedimento: ${procedimento}\n` +
-                    `👨‍⚕️ Profissional: ${funcionario}`;
+        var mensagem = `Olá, gostaria de agendar um horário! \n\n` +
+                        `👤 Nome: ${nome}\n` +
+                        `👨‍⚕️ Profissional: ${funcionario}\n` +
+                        `📅 Data: ${data}\n` +
+                        `🕒 Horário: ${horario}\n` +
+                        `💇 Serviço: ${servico}`;
 
-        var url = `https://api.whatsapp.com/send?phone=5506234348719&text=${encodeURIComponent(mensagem)}`;
-
+        var whatsappNumber = '5506234348719'; // Número de telefone com DDI
+        var url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensagem)}`;
+        
+        // Redireciona para o WhatsApp
         window.open(url, '_blank');
-        });
+    });
+</script>
 
-        // Função para agendar
-        document.getElementById('agendamentoForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            alert('Agendamento realizado com sucesso!');
-        });
-    </script>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
      
 </body>
 </html>
