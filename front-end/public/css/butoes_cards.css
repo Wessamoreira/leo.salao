@@ -1,0 +1,47 @@
+/* Customizando os botões dos cards */
+.btn-custom {
+    background-color: #3498db; /* Cor de fundo azul vibrante */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Deixar o texto em negrito */
+    text-transform: uppercase; /* Texto em maiúsculas */
+    width: 80px; /* Largura do botão fixada */
+    height: 40px; /* Altura do botão */
+    padding: 0; /* Retirando o padding para usar largura e altura fixas */
+    font-size: 14px; /* Tamanho de fonte ajustado */
+    border-radius: 20px; /* Bordas arredondadas */
+    border: none; /* Retirar borda */
+    display: flex; /* Usar flexbox para centralizar o texto */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Efeito suave para as transições */
+}
+
+/* Efeito hover */
+.btn-custom:hover {
+    background-color: #2980b9; /* Cor de fundo mais escura quando o mouse estiver sobre o botão */
+    transform: scale(1.05); /* Aumenta o botão um pouco quando o mouse passa sobre ele */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra no botão */
+}
+
+/* Efeito de foco */
+.btn-custom:focus {
+    outline: none; /* Retira o contorno padrão ao clicar */
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.6); /* Contorno azul claro ao focar */
+}
+
+/* Efeito de desabilitado (caso necessário) */
+.btn-custom:disabled {
+    background-color: #bdc3c7; /* Cor de fundo quando desabilitado */
+    color: #7f8c8d; /* Cor do texto quando desabilitado */
+    cursor: not-allowed;
+}
+
+/* Adicionando um pequeno efeito de transição nos cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de suavização ao mover o card */
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Movimenta o card para cima ao passar o mouse */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra suave ao passar o mouse */
+}

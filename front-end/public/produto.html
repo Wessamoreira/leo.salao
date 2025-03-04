@@ -425,6 +425,20 @@
     background-color: #1ebe5d; /* Tom mais escuro ao passar o mouse */
 }
 
+        .navbar-toggler {
+            border: none;
+            font-size: 1rem;
+            color: rgb(5, 5, 5);
+        }
+        .navbar-toggler:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        .navbar-toggler span {
+            display: inline-block;
+            font-weight: bold;
+        }
+
 
     </style>
 </head>
@@ -450,8 +464,8 @@
     <div class="container">
         <a class="navbar-brand" href="#"> Leo Cabeleireiros</a>
         <!-- Botão do menu (ícone hamburguer) -->
-        <button class="navbar-toggler" type="button" id="menu-btn" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span>Menu</span>
         </button>
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto">
@@ -688,7 +702,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
  </script>
 
+<script>
+    // Para garantir que o menu de navegação funcione corretamente
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarMenu = document.querySelector('#menu');
   
+    navbarToggler.addEventListener('click', () => {
+      navbarMenu.classList.toggle('collapse');
+    });
+  </script>
 
 
   <!-- Rodapé -->
@@ -705,12 +727,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    
 
 
 </body>
